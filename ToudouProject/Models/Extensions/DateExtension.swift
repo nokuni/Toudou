@@ -9,6 +9,18 @@ import Foundation
 
 extension Date {
     
+    static var random: Date? {
+        let date = Date()
+        let calendar = Calendar.current
+        var dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        guard let days = calendar.range(of: .day, in: .month, for: date),
+              let randomDay = days.randomElement() else {
+            return nil
+        }
+        dateComponents.setValue(randomDay, for: .day)
+        return calendar.date(from: dateComponents)
+    }
+    
     var isToday: Bool {
         let calendar = Calendar.current
         return calendar.isDateInToday(self)

@@ -14,6 +14,7 @@ struct SheetTopContentView: View {
     var contextualAction: (() -> Void)?
     var dismissAction: () -> Void
     var body: some View {
+        
         HStack {
             Button("Cancel") { dismissAction() }
             Spacer()

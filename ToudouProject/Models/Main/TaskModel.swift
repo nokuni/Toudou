@@ -15,4 +15,8 @@ struct TaskModel {
     var priority: TaskPriority = .none
     var reminder: TaskAlertReminder = .none
     var category: TaskCategory = .work
+    
+    func isReminderPossible(on reminder: TaskAlertReminder) -> Bool {
+        Date.now > reminder.reminderDate(from: dueDate)
+    }
 }

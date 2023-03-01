@@ -15,6 +15,7 @@ struct TaskDetailView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 15) {
+                
                 TaskCategoryAndTitleView(task: task)
                 
                 TaskDatesView(task: task)
@@ -42,6 +43,10 @@ struct TaskDetailView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(task.title)
+            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ShareButtonView(task: task)
             }
         }
         .onAppear {

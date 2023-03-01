@@ -32,6 +32,19 @@ public enum TaskPriority: Int16, CaseIterable, RawRepresentable, ColorPickerDele
         }
     }
     
+    var shareMessage: String {
+        switch self {
+        case .none:
+            return "Chill and take your time for that one."
+        case .low:
+            return "You can do that one without any pressure."
+        case .medium:
+            return "We are counting on you for that one"
+        case .high:
+            return "That one has to be done imperatively."
+        }
+    }
+    
     static func priorityColor(_ priority: Int) -> Color {
         if let priority = allCases.first(where: { $0.rawValue == priority }) {
             return priority.color

@@ -9,9 +9,6 @@ import SwiftUI
 
 struct TaskAlertFieldView: View {
     @Binding var taskModel: TaskModel
-    func isReminderPossible(on reminder: TaskAlertReminder) -> Bool {
-        Date.now > reminder.reminderDate(from: taskModel.dueDate)
-    }
     var body: some View {
         Menu {
             ForEach(TaskAlertReminder.allCases, id: \.self) { reminder in
@@ -22,7 +19,7 @@ struct TaskAlertFieldView: View {
                         .padding()
                         .background(Color.blue)
                 }
-                .disabled(isReminderPossible(on: reminder))
+                .disabled(taskModel.isReminderPossible(on: reminder))
                 .buttonStyle(.borderedProminent)
             }
         } label: {

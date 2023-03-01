@@ -33,6 +33,7 @@
 		964201C92965A96900C59590 /* FilterSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201C82965A96900C59590 /* FilterSegmentedPicker.swift */; };
 		964201CF2965B56A00C59590 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201CE2965B56900C59590 /* DateExtension.swift */; };
 		964201E02965DC8E00C59590 /* TaskFiltering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201DF2965DC8E00C59590 /* TaskFiltering.swift */; };
+		964C7AC229AFC3B600472274 /* ToudouProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C7AC129AFC3B600472274 /* ToudouProjectTests.swift */; };
 		966CC96229AF86A800A70983 /* TaskCategoryAndTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC96129AF86A800A70983 /* TaskCategoryAndTitleView.swift */; };
 		966CC96429AF86D800A70983 /* TaskDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC96329AF86D800A70983 /* TaskDatesView.swift */; };
 		966CC96629AF86FC00A70983 /* TaskNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC96529AF86FC00A70983 /* TaskNotesView.swift */; };
@@ -53,6 +54,16 @@
 		96D14F4E29AEB2EC00B01D65 /* TextLimiterModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D14F4D29AEB2EC00B01D65 /* TextLimiterModifer.swift */; };
 		96E03D4329AE312F007EE940 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E03D4229AE312F007EE940 /* TaskListView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		964C7AC329AFC3B600472274 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96420179296496D100C59590 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96420180296496D100C59590;
+			remoteInfo = ToudouProject;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		96420181296496D100C59590 /* ToudouProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToudouProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +94,8 @@
 		964201C82965A96900C59590 /* FilterSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSegmentedPicker.swift; sourceTree = "<group>"; };
 		964201CE2965B56900C59590 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		964201DF2965DC8E00C59590 /* TaskFiltering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFiltering.swift; sourceTree = "<group>"; };
+		964C7ABF29AFC3B600472274 /* ToudouProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToudouProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		964C7AC129AFC3B600472274 /* ToudouProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToudouProjectTests.swift; sourceTree = "<group>"; };
 		966CC96129AF86A800A70983 /* TaskCategoryAndTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategoryAndTitleView.swift; sourceTree = "<group>"; };
 		966CC96329AF86D800A70983 /* TaskDatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDatesView.swift; sourceTree = "<group>"; };
 		966CC96529AF86FC00A70983 /* TaskNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNotesView.swift; sourceTree = "<group>"; };
@@ -112,6 +125,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		964C7ABC29AFC3B600472274 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -121,6 +141,7 @@
 				96BFB50F2967912B000BCE7E /* TaskEntity+CoreDataClass.swift */,
 				96BFB5102967912B000BCE7E /* TaskEntity+CoreDataProperties.swift */,
 				96420183296496D100C59590 /* ToudouProject */,
+				964C7AC029AFC3B600472274 /* ToudouProjectTests */,
 				96420182296496D100C59590 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				96420181296496D100C59590 /* ToudouProject.app */,
+				964C7ABF29AFC3B600472274 /* ToudouProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,7 +164,6 @@
 				964201E32966D25F00C59590 /* Views */,
 				964201C72965962500C59590 /* View Models */,
 				9642019D2964AD4900C59590 /* Models */,
-				9642018F296496D300C59590 /* ToudouProject.xcdatamodeld */,
 				9642018A296496D300C59590 /* Preview Content */,
 			);
 			path = ToudouProject;
@@ -267,6 +288,7 @@
 		964201D82965DAF400C59590 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9642018F296496D300C59590 /* ToudouProject.xcdatamodeld */,
 				96420188296496D300C59590 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -304,6 +326,14 @@
 				964201AC2964D5EC00C59590 /* Tasks */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		964C7AC029AFC3B600472274 /* ToudouProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				964C7AC129AFC3B600472274 /* ToudouProjectTests.swift */,
+			);
+			path = ToudouProjectTests;
 			sourceTree = "<group>";
 		};
 		969691A829AF4E1400CD0CE8 /* Commons */ = {
@@ -348,6 +378,24 @@
 			productReference = 96420181296496D100C59590 /* ToudouProject.app */;
 			productType = "com.apple.product-type.application";
 		};
+		964C7ABE29AFC3B600472274 /* ToudouProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 964C7AC529AFC3B600472274 /* Build configuration list for PBXNativeTarget "ToudouProjectTests" */;
+			buildPhases = (
+				964C7ABB29AFC3B600472274 /* Sources */,
+				964C7ABC29AFC3B600472274 /* Frameworks */,
+				964C7ABD29AFC3B600472274 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				964C7AC429AFC3B600472274 /* PBXTargetDependency */,
+			);
+			name = ToudouProjectTests;
+			productName = ToudouProjectTests;
+			productReference = 964C7ABF29AFC3B600472274 /* ToudouProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -360,6 +408,10 @@
 				TargetAttributes = {
 					96420180296496D100C59590 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					964C7ABE29AFC3B600472274 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 96420180296496D100C59590;
 					};
 				};
 			};
@@ -377,6 +429,7 @@
 			projectRoot = "";
 			targets = (
 				96420180296496D100C59590 /* ToudouProject */,
+				964C7ABE29AFC3B600472274 /* ToudouProjectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -388,6 +441,13 @@
 			files = (
 				9642018C296496D300C59590 /* Preview Assets.xcassets in Resources */,
 				96420189296496D300C59590 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		964C7ABD29AFC3B600472274 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +504,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		964C7ABB29AFC3B600472274 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				964C7AC229AFC3B600472274 /* ToudouProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		964C7AC429AFC3B600472274 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96420180296496D100C59590 /* ToudouProject */;
+			targetProxy = 964C7AC329AFC3B600472274 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		96420192296496D300C59590 /* Debug */ = {
@@ -619,6 +695,42 @@
 			};
 			name = Release;
 		};
+		964C7AC629AFC3B600472274 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q6DV6C6352;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yann.ToudouProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToudouProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ToudouProject";
+			};
+			name = Debug;
+		};
+		964C7AC729AFC3B600472274 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q6DV6C6352;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yann.ToudouProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToudouProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ToudouProject";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -636,6 +748,15 @@
 			buildConfigurations = (
 				96420195296496D300C59590 /* Debug */,
 				96420196296496D300C59590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		964C7AC529AFC3B600472274 /* Build configuration list for PBXNativeTarget "ToudouProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				964C7AC629AFC3B600472274 /* Debug */,
+				964C7AC729AFC3B600472274 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

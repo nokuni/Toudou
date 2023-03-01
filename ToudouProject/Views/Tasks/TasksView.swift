@@ -42,9 +42,6 @@ struct TasksView: View {
                 Color.background.ignoresSafeArea()
                 VStack {
                     
-                    // The ShareLink shows a security message "This method should not be called on the main thread as it may lead to UI unresponsiveness.". This is a known issue. It can be ignored.
-                    ShareButtonView()
-                    
                     FilterSegmentedPicker(models: TaskFiltering.allCases, selectedModel: $filtering)
                     
                     TaskListView(filtering: $filtering)
