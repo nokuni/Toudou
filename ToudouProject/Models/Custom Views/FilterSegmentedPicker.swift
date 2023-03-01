@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A filter segmented picker.
 struct FilterSegmentedPicker<M: RawRepresentable & Hashable & CaseIterable>: View {
     @Namespace var animation
     var models: [M]
@@ -46,5 +47,6 @@ struct FilterSegmentedPicker<M: RawRepresentable & Hashable & CaseIterable>: Vie
             RoundedRectangle(cornerRadius: 15)
                 .foregroundColor(Color(UIColor.systemGray5))
         )
+        .padding(.horizontal)
     }
 }

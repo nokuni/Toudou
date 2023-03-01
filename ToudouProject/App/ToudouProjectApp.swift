@@ -13,7 +13,7 @@ struct ToudouProjectApp: App {
     @StateObject private var toudouVM = ToudouViewModel()
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            TasksView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(toudouVM)
                 .onAppear {

@@ -11,6 +11,7 @@ enum FocusField: String {
     case one, two, three, four, five, six, seven, eight, nine, ten
 }
 
+/// Default Textfield Modifier
 struct TextFieldModifier<Field: RawRepresentable & Hashable>: ViewModifier {
     var text: Binding<String>
     var focusField: FocusState<Field?>.Binding
@@ -37,16 +38,7 @@ struct TextFieldModifier<Field: RawRepresentable & Hashable>: ViewModifier {
                         }) {
                             Image(systemName: "multiply.circle.fill")
                         }
-                        .foregroundColor(.blue)
-                    }
-                    if focusField.wrappedValue != nil {
-                        Button("Cancel") {
-                            withAnimation {
-                                cancelAction?()
-                                focusField.wrappedValue = nil
-                            }
-                        }
-                        .foregroundColor(.blue)
+                        .foregroundColor(.accentColor)
                     }
                 }
                     .padding(.horizontal)

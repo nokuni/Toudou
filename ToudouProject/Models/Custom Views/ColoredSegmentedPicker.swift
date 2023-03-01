@@ -12,6 +12,7 @@ protocol ColorPickerDelegate {
     var color: Color { get }
 }
 
+/// A colored segmented picker.
 struct ColoredSegmentedPicker<M: RawRepresentable & Hashable & CaseIterable & ColorPickerDelegate>: View {
     @Namespace var animation
     var models: [M]
@@ -22,8 +23,8 @@ struct ColoredSegmentedPicker<M: RawRepresentable & Hashable & CaseIterable & Co
                 Text(model.name.capitalized)
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity, minHeight: UIScreen.main.bounds.height * 0.045, maxHeight: UIScreen.main.bounds.height * 0.045)
-                    .font(.system(size: UIScreen.main.bounds.height * 0.015))
-                    .foregroundColor("\(selectedModel)" == "\(model)" ? .yingYang : .yangYing)
+                    .font(.caption)
+                    .foregroundColor("\(selectedModel)" == "\(model)" ? Color(UIColor.systemBackground) : Color.primary)
                     .frame(maxWidth: .infinity, minHeight: UIScreen.main.bounds.height * 0.05, maxHeight: UIScreen.main.bounds.height * 0.05)
                     .background(
                         ZStack {
