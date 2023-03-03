@@ -15,6 +15,7 @@ final class ToudouViewModel: ObservableObject {
     }
     
     @Published var tasks = [TaskEntity]()
+    @Published var filtering: TaskFiltering = .all
     @Published var sortOrder: SortOrder = .ascending
     @Published var selectedSort: TaskSorting = .creationDate
     @Published var selectedTask: TaskEntity?
@@ -101,7 +102,7 @@ final class ToudouViewModel: ObservableObject {
     
     // MARK: - Sort and filters
     
-    func filteredTasks(_ filter: TaskFiltering) -> [TaskEntity] {
+    func filteredTasks() -> [TaskEntity] {
         let today = tasks.filter {
             guard let dueDate = $0.dueDate else { return false }
             return dueDate.isToday && !$0.isDone
@@ -112,7 +113,7 @@ final class ToudouViewModel: ObservableObject {
         }
         let done = tasks.filter { $0.isDone }
         
-        switch filter {
+        switch filtering {
         case .all:
             return tasks
         case .today:

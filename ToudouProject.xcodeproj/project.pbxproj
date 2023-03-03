@@ -36,6 +36,12 @@
 		964311D929B090AD0019E184 /* ToudouProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311D829B090AD0019E184 /* ToudouProjectUITests.swift */; };
 		964311DB29B090AD0019E184 /* ToudouProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311DA29B090AD0019E184 /* ToudouProjectUITestsLaunchTests.swift */; };
 		964311E129B150C00019E184 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201CE2965B56900C59590 /* DateExtension.swift */; };
+		964311E529B2233E0019E184 /* EmptyTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311E429B2233E0019E184 /* EmptyTaskView.swift */; };
+		964311E729B226690019E184 /* SortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311E629B226680019E184 /* SortOrder.swift */; };
+		964311E929B226780019E184 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311E829B226780019E184 /* BoolExtension.swift */; };
+		964311EC29B22DCB0019E184 /* NewTaskButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311EB29B22DCB0019E184 /* NewTaskButtonView.swift */; };
+		964311EE29B22E0A0019E184 /* SortOrderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311ED29B22E0A0019E184 /* SortOrderButtonView.swift */; };
+		964311F029B22E3B0019E184 /* SortingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311EF29B22E3B0019E184 /* SortingButtonView.swift */; };
 		964C7AC229AFC3B600472274 /* ToudouProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C7AC129AFC3B600472274 /* ToudouProjectTests.swift */; };
 		966CC96229AF86A800A70983 /* TaskCategoryAndTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC96129AF86A800A70983 /* TaskCategoryAndTitleView.swift */; };
 		966CC96429AF86D800A70983 /* TaskDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC96329AF86D800A70983 /* TaskDatesView.swift */; };
@@ -107,6 +113,12 @@
 		964311D629B090AD0019E184 /* ToudouProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToudouProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		964311D829B090AD0019E184 /* ToudouProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToudouProjectUITests.swift; sourceTree = "<group>"; };
 		964311DA29B090AD0019E184 /* ToudouProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToudouProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		964311E429B2233E0019E184 /* EmptyTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTaskView.swift; sourceTree = "<group>"; };
+		964311E629B226680019E184 /* SortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOrder.swift; sourceTree = "<group>"; };
+		964311E829B226780019E184 /* BoolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
+		964311EB29B22DCB0019E184 /* NewTaskButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskButtonView.swift; sourceTree = "<group>"; };
+		964311ED29B22E0A0019E184 /* SortOrderButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOrderButtonView.swift; sourceTree = "<group>"; };
+		964311EF29B22E3B0019E184 /* SortingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingButtonView.swift; sourceTree = "<group>"; };
 		964C7ABF29AFC3B600472274 /* ToudouProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToudouProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		964C7AC129AFC3B600472274 /* ToudouProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToudouProjectTests.swift; sourceTree = "<group>"; };
 		966CC96129AF86A800A70983 /* TaskCategoryAndTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategoryAndTitleView.swift; sourceTree = "<group>"; };
@@ -228,6 +240,7 @@
 				964201A62964C7C900C59590 /* ViewExtension.swift */,
 				964201C22965845200C59590 /* ColorExtension.swift */,
 				964201CE2965B56900C59590 /* DateExtension.swift */,
+				964311E829B226780019E184 /* BoolExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,7 +248,7 @@
 		964201AC2964D5EC00C59590 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				96420186296496D100C59590 /* TasksView.swift */,
+				964311EA29B22DC00019E184 /* Main */,
 				964201AD2964D5F700C59590 /* Fields */,
 				96BFB51D29685592000BCE7E /* Detail */,
 				964201DD2965DC4800C59590 /* List */,
@@ -303,6 +316,7 @@
 				96BFB51729682DC1000BCE7E /* TaskAlertReminder.swift */,
 				96D14F4B29AEA68E00B01D65 /* TaskModel.swift */,
 				969691A629AF43CE00CD0CE8 /* TaskSorting.swift */,
+				964311E629B226680019E184 /* SortOrder.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -357,6 +371,18 @@
 				964311DA29B090AD0019E184 /* ToudouProjectUITestsLaunchTests.swift */,
 			);
 			path = ToudouProjectUITests;
+			sourceTree = "<group>";
+		};
+		964311EA29B22DC00019E184 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				96420186296496D100C59590 /* TasksView.swift */,
+				964311E429B2233E0019E184 /* EmptyTaskView.swift */,
+				964311EB29B22DCB0019E184 /* NewTaskButtonView.swift */,
+				964311ED29B22E0A0019E184 /* SortOrderButtonView.swift */,
+				964311EF29B22E3B0019E184 /* SortingButtonView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		964C7AC029AFC3B600472274 /* ToudouProjectTests */ = {
@@ -542,12 +568,15 @@
 				966CC96829AF872700A70983 /* TaskCountdownView.swift in Sources */,
 				96420185296496D100C59590 /* ToudouProjectApp.swift in Sources */,
 				96D14F4E29AEB2EC00B01D65 /* TextLimiterModifer.swift in Sources */,
+				964311E529B2233E0019E184 /* EmptyTaskView.swift in Sources */,
 				964201E02965DC8E00C59590 /* TaskFiltering.swift in Sources */,
 				9642019C29649E7500C59590 /* CoreDataManager.swift in Sources */,
 				96BFB516296825B4000BCE7E /* NotificationManager.swift in Sources */,
 				96D14F4C29AEA68E00B01D65 /* TaskModel.swift in Sources */,
 				96BFB51829682DC1000BCE7E /* TaskAlertReminder.swift in Sources */,
+				964311E929B226780019E184 /* BoolExtension.swift in Sources */,
 				964201A72964C7C900C59590 /* ViewExtension.swift in Sources */,
+				964311EE29B22E0A0019E184 /* SortOrderButtonView.swift in Sources */,
 				966CC96A29AF87E900A70983 /* EditAndValidateTaskButtonView.swift in Sources */,
 				964201BF2965830200C59590 /* AddTaskTopContentView.swift in Sources */,
 				966CC96629AF86FC00A70983 /* TaskNotesView.swift in Sources */,
@@ -557,7 +586,10 @@
 				969691A729AF43CE00CD0CE8 /* TaskSorting.swift in Sources */,
 				964201B72964DE9500C59590 /* TaskNotesFieldView.swift in Sources */,
 				964201A12964BF2100C59590 /* TaskCategory.swift in Sources */,
+				964311EC29B22DCB0019E184 /* NewTaskButtonView.swift in Sources */,
 				96BFB5122967912B000BCE7E /* TaskEntity+CoreDataProperties.swift in Sources */,
+				964311E729B226690019E184 /* SortOrder.swift in Sources */,
+				964311F029B22E3B0019E184 /* SortingButtonView.swift in Sources */,
 				9642019F2964AD5200C59590 /* TaskPriority.swift in Sources */,
 				966CC96E29AFB2AD00A70983 /* DateTimer.swift in Sources */,
 				9642019A29649CE400C59590 /* TaskRowView.swift in Sources */,
