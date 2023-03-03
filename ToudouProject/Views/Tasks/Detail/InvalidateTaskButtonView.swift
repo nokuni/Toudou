@@ -21,7 +21,7 @@ struct InvalidateTaskButtonView: View {
             Text("Invalidate")
                 .fontWeight(.bold)
                 .font(.title3)
-                .foregroundColor(.yingYang)
+                .foregroundColor(.white)
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(Color.redApp.cornerRadius(10))
