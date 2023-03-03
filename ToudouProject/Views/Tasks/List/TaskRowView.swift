@@ -32,6 +32,15 @@ struct TaskRowView: View {
                 
                 Spacer()
                 
+                if toudouVM.hasTaskExpired(task) {
+                    HStack {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                            .foregroundColor(Color.yellowApp)
+                        Text("Expired")
+                            .font(.caption)
+                    }
+                }
+                
                 Image(task.category.icon)
                     .resizable()
                     .scaledToFit()

@@ -11,6 +11,7 @@ import XCTest
 final class ToudouProjectTests: XCTestCase {
     
     let viewModel = ToudouViewModel()
+    var task = TaskModel()
     
     override func setUpWithError() throws {
         let viewModel = ToudouViewModel()
@@ -26,18 +27,17 @@ final class ToudouProjectTests: XCTestCase {
         // Given
         let title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         let maximumCharacterCount = 30
-        var task = TaskModel()
         // When
         task.title = title
         viewModel.createTask(taskModel: task)
         // Then
-        XCTAssertGreaterThan(viewModel.tasks[0].title.count, maximumCharacterCount)
+        let expectedResult = viewModel.tasks[0].title.count <= maximumCharacterCount
+        XCTAssertFalse(expectedResult)
     }
     // Test title is not empty
     func testTaskTitleIsNotEmpty() throws {
         // Given
         let title = ""
-        var task = TaskModel()
         // When
         task.title = title
         viewModel.createTask(taskModel: task)
@@ -49,10 +49,9 @@ final class ToudouProjectTests: XCTestCase {
     func testTaskTitle() {
         // Given
         let title = "Hello World"
-        var taskModel = TaskModel()
         // When
-        taskModel.title = title
-        viewModel.createTask(taskModel: taskModel)
+        task.title = title
+        viewModel.createTask(taskModel: task)
         // Then
         XCTAssertEqual(viewModel.tasks[0].title, title)
     }
@@ -61,10 +60,9 @@ final class ToudouProjectTests: XCTestCase {
     func testTaskPriorityField() throws {
         // Given
         let priority: TaskPriority = .medium
-        var taskModel = TaskModel()
         // When
-        taskModel.priority = .medium
-        viewModel.createTask(taskModel: taskModel)
+        task.priority = .medium
+        viewModel.createTask(taskModel: task)
         // Then
         XCTAssertEqual(viewModel.tasks[0].priority, priority)
     }
@@ -73,10 +71,9 @@ final class ToudouProjectTests: XCTestCase {
     func testTaskHasNoDueDate() throws {
         // Given
         let date = Date.now
-        var taskModel = TaskModel()
         // When
-        taskModel.dueDate = date
-        viewModel.createTask(taskModel: taskModel)
+        task.dueDate = date
+        viewModel.createTask(taskModel: task)
         // Then
         XCTAssertNil(viewModel.tasks[0].dueDate)
     }
@@ -84,11 +81,10 @@ final class ToudouProjectTests: XCTestCase {
     func testTaskDueDateField() throws {
         // Given
         let date = Date.now
-        var taskModel = TaskModel()
         // When
-        taskModel.hasDueDate = true
-        taskModel.dueDate = date
-        viewModel.createTask(taskModel: taskModel)
+        task.hasDueDate = true
+        task.dueDate = date
+        viewModel.createTask(taskModel: task)
         // Then
         XCTAssertEqual(viewModel.tasks[0].dueDate, date)
     }
@@ -97,21 +93,19 @@ final class ToudouProjectTests: XCTestCase {
     func testReminderDate() {
         // Given
         let reminder: TaskAlertReminder = .oneWeekBefore
-        var taskModel = TaskModel()
         // When
-        taskModel.dueDate = Date.now.addingDate(component: .month, value: 1)
+        task.dueDate = Date.now.addingDate(component: .month, value: 1)
         // Then
-        let expectedResult = taskModel.isReminderPossible(on: reminder)
+        let expectedResult = task.isReminderPossible(on: reminder)
         XCTAssertFalse(expectedResult)
     }
     // Test model reminder is entity reminder
     func testTaskReminderField() throws {
         // Given
         let reminder: TaskAlertReminder = .fiveMinutesBefore
-        var taskModel = TaskModel()
         // When
-        taskModel.reminder = reminder
-        viewModel.createTask(taskModel: taskModel)
+        task.reminder = reminder
+        viewModel.createTask(taskModel: task)
         // Then
         XCTAssertEqual(viewModel.tasks[0].reminder, reminder)
     }
@@ -200,6 +194,56 @@ final class ToudouProjectTests: XCTestCase {
         viewModel.toggleTaskValidation(task: viewModel.tasks[0])
         // Then
         XCTAssertTrue(viewModel.tasks[0].isDone)
+    }
+    
+    // Test the filter applied on all tasks
+    func testAllTasks() throws {
+        // Given
+        // When
+        task.hasDueDate = true
+        viewModel.createTask(taskModel: task)
+        
+        task.hasDueDate = true
+        task.dueDate = Date.now.addingDate(component: .day, value: 5)
+        viewModel.createTask(taskModel: task)
+        
+        task = TaskModel()
+        
+        task.isDone = true
+        viewModel.createTask(taskModel: task)
+        // Then
+        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks(.all))
+    }
+    
+    // Test the filter applied on today tasks
+    func testTodayTasks() throws {
+        // Given
+        // When
+        task.hasDueDate = true
+        viewModel.createTask(taskModel: task)
+        // Then
+        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks(.today))
+    }
+    
+    // Test the filter applied on planned tasks
+    func testPlannedTasks() throws {
+        // Given
+        // When
+        task.hasDueDate = true
+        task.dueDate = Date.now.addingDate(component: .day, value: 5)
+        viewModel.createTask(taskModel: task)
+        // Then
+        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks(.planned))
+    }
+    
+    // Test the filter applied on planned tasks
+    func testDoneTasks() throws {
+        // Given
+        // When
+        task.isDone = true
+        viewModel.createTask(taskModel: task)
+        // Then
+        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks(.done))
     }
     
     // Test date ascending sorting
@@ -374,9 +418,9 @@ final class ToudouProjectTests: XCTestCase {
  
  let expectation = XCTestExpectation(description: "testName")
  let result = XCTWaiter.wait(for: [expectation], timeout: 0.5)
+ 
+ Then
  if result == XCTWaiter.Result.timedOut {
  // Write Test
  }
- 
- Then
  */

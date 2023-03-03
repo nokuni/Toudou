@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-class ToudouViewModel: ObservableObject {
+final class ToudouViewModel: ObservableObject {
     
     init() {
         readTasks()
@@ -36,11 +36,19 @@ class ToudouViewModel: ObservableObject {
             newTask.priority = taskModel.priority
             newTask.reminder = taskModel.reminder
             newTask.category = taskModel.category
+            newTask.isDone = taskModel.isDone
             
             CoreDataManager.shared.saveData()
             readTasks()
             
-            NotificationManager.shared.scheduleReminderNotification(of: newTask)
+            if taskModel.hasDueDate {
+                NotificationManager.shared.scheduleNotification(of: newTask)
+            }
+            
+            if taskModel.reminder != .none || taskModel.reminder != .onTime {
+                NotificationManager.shared.scheduleReminderNotification(of: newTask)
+            }
+            
         }
     }
     
@@ -70,16 +78,22 @@ class ToudouViewModel: ObservableObject {
             CoreDataManager.shared.saveData()
             readTasks()
             
-            if let id = tasks[index].id {
+            guard let id = tasks[index].id else { return }
+            
+            if taskModel.hasDueDate {
                 NotificationManager.shared.removeNotifications(from: id.uuidString)
-                NotificationManager.shared.scheduleReminderNotification(of: tasks[index])
+                NotificationManager.shared.scheduleNotification(of: tasks[index])
             }
             
-            self.selectedTask = tasks[index]
+            if taskModel.reminder != .none || taskModel.reminder != .onTime {
+                NotificationManager.shared.scheduleReminderNotification(of: tasks[index])
+            }
         }
     }
     
     func deleteTask(_ task: TaskEntity) {
+        guard let id = task.id else { return }
+        NotificationManager.shared.removeNotifications(from: id.uuidString)
         CoreDataManager.shared.delete(object: task)
         CoreDataManager.shared.saveData()
         readTasks()
@@ -110,12 +124,17 @@ class ToudouViewModel: ObservableObject {
         }
     }
     
-    func currentSort<Value>(keyPath: KeyPath<TaskEntity, Value>, order: Bool) -> [NSSortDescriptor] {
+    func hasTaskExpired(_ task: TaskEntity) -> Bool {
+        guard let dueDate = task.dueDate else { return false }
+        return Date.now > dueDate
+    }
+    
+    private func currentSort<Value>(keyPath: KeyPath<TaskEntity, Value>, order: Bool) -> [NSSortDescriptor] {
         let sorting = [NSSortDescriptor(keyPath: keyPath, ascending: order)]
         return sorting
     }
     
-    func fetch<Value>(keyPath: KeyPath<TaskEntity, Value>, order: Bool) {
+    private func fetch<Value>(keyPath: KeyPath<TaskEntity, Value>, order: Bool) {
         let sorting = currentSort(keyPath: keyPath, order: order)
         tasks = CoreDataManager.shared.fetch("TaskEntity", sorting: sorting)
         CoreDataManager.shared.saveData()

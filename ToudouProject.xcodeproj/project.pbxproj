@@ -33,6 +33,9 @@
 		964201C92965A96900C59590 /* FilterSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201C82965A96900C59590 /* FilterSegmentedPicker.swift */; };
 		964201CF2965B56A00C59590 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201CE2965B56900C59590 /* DateExtension.swift */; };
 		964201E02965DC8E00C59590 /* TaskFiltering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201DF2965DC8E00C59590 /* TaskFiltering.swift */; };
+		964311D929B090AD0019E184 /* ToudouProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311D829B090AD0019E184 /* ToudouProjectUITests.swift */; };
+		964311DB29B090AD0019E184 /* ToudouProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964311DA29B090AD0019E184 /* ToudouProjectUITestsLaunchTests.swift */; };
+		964311E129B150C00019E184 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201CE2965B56900C59590 /* DateExtension.swift */; };
 		964C7AC229AFC3B600472274 /* ToudouProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C7AC129AFC3B600472274 /* ToudouProjectTests.swift */; };
 		966CC96229AF86A800A70983 /* TaskCategoryAndTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC96129AF86A800A70983 /* TaskCategoryAndTitleView.swift */; };
 		966CC96429AF86D800A70983 /* TaskDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC96329AF86D800A70983 /* TaskDatesView.swift */; };
@@ -56,6 +59,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		964311DC29B090AD0019E184 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96420179296496D100C59590 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96420180296496D100C59590;
+			remoteInfo = ToudouProject;
+		};
 		964C7AC329AFC3B600472274 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 96420179296496D100C59590 /* Project object */;
@@ -94,6 +104,9 @@
 		964201C82965A96900C59590 /* FilterSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSegmentedPicker.swift; sourceTree = "<group>"; };
 		964201CE2965B56900C59590 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		964201DF2965DC8E00C59590 /* TaskFiltering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFiltering.swift; sourceTree = "<group>"; };
+		964311D629B090AD0019E184 /* ToudouProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToudouProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		964311D829B090AD0019E184 /* ToudouProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToudouProjectUITests.swift; sourceTree = "<group>"; };
+		964311DA29B090AD0019E184 /* ToudouProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToudouProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		964C7ABF29AFC3B600472274 /* ToudouProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToudouProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		964C7AC129AFC3B600472274 /* ToudouProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToudouProjectTests.swift; sourceTree = "<group>"; };
 		966CC96129AF86A800A70983 /* TaskCategoryAndTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategoryAndTitleView.swift; sourceTree = "<group>"; };
@@ -125,6 +138,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		964311D329B090AD0019E184 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		964C7ABC29AFC3B600472274 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,6 +162,7 @@
 				96BFB5102967912B000BCE7E /* TaskEntity+CoreDataProperties.swift */,
 				96420183296496D100C59590 /* ToudouProject */,
 				964C7AC029AFC3B600472274 /* ToudouProjectTests */,
+				964311D729B090AD0019E184 /* ToudouProjectUITests */,
 				96420182296496D100C59590 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,6 +172,7 @@
 			children = (
 				96420181296496D100C59590 /* ToudouProject.app */,
 				964C7ABF29AFC3B600472274 /* ToudouProjectTests.xctest */,
+				964311D629B090AD0019E184 /* ToudouProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,6 +350,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		964311D729B090AD0019E184 /* ToudouProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				964311D829B090AD0019E184 /* ToudouProjectUITests.swift */,
+				964311DA29B090AD0019E184 /* ToudouProjectUITestsLaunchTests.swift */,
+			);
+			path = ToudouProjectUITests;
+			sourceTree = "<group>";
+		};
 		964C7AC029AFC3B600472274 /* ToudouProjectTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +409,24 @@
 			productReference = 96420181296496D100C59590 /* ToudouProject.app */;
 			productType = "com.apple.product-type.application";
 		};
+		964311D529B090AD0019E184 /* ToudouProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 964311E029B090AE0019E184 /* Build configuration list for PBXNativeTarget "ToudouProjectUITests" */;
+			buildPhases = (
+				964311D229B090AD0019E184 /* Sources */,
+				964311D329B090AD0019E184 /* Frameworks */,
+				964311D429B090AD0019E184 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				964311DD29B090AD0019E184 /* PBXTargetDependency */,
+			);
+			name = ToudouProjectUITests;
+			productName = ToudouProjectUITests;
+			productReference = 964311D629B090AD0019E184 /* ToudouProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		964C7ABE29AFC3B600472274 /* ToudouProjectTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 964C7AC529AFC3B600472274 /* Build configuration list for PBXNativeTarget "ToudouProjectTests" */;
@@ -409,6 +458,10 @@
 					96420180296496D100C59590 = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					964311D529B090AD0019E184 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 96420180296496D100C59590;
+					};
 					964C7ABE29AFC3B600472274 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 96420180296496D100C59590;
@@ -430,6 +483,7 @@
 			targets = (
 				96420180296496D100C59590 /* ToudouProject */,
 				964C7ABE29AFC3B600472274 /* ToudouProjectTests */,
+				964311D529B090AD0019E184 /* ToudouProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -441,6 +495,13 @@
 			files = (
 				9642018C296496D300C59590 /* Preview Assets.xcassets in Resources */,
 				96420189296496D300C59590 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		964311D429B090AD0019E184 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +565,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		964311D229B090AD0019E184 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				964311DB29B090AD0019E184 /* ToudouProjectUITestsLaunchTests.swift in Sources */,
+				964311E129B150C00019E184 /* DateExtension.swift in Sources */,
+				964311D929B090AD0019E184 /* ToudouProjectUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		964C7ABB29AFC3B600472274 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,6 +586,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		964311DD29B090AD0019E184 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96420180296496D100C59590 /* ToudouProject */;
+			targetProxy = 964311DC29B090AD0019E184 /* PBXContainerItemProxy */;
+		};
 		964C7AC429AFC3B600472274 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 96420180296496D100C59590 /* ToudouProject */;
@@ -649,10 +725,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ToudouProject/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Toudou;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -678,10 +756,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ToudouProject/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Toudou;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -692,6 +772,40 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		964311DE29B090AD0019E184 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q6DV6C6352;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yann.ToudouProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ToudouProject;
+			};
+			name = Debug;
+		};
+		964311DF29B090AD0019E184 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q6DV6C6352;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yann.ToudouProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ToudouProject;
 			};
 			name = Release;
 		};
@@ -748,6 +862,15 @@
 			buildConfigurations = (
 				96420195296496D300C59590 /* Debug */,
 				96420196296496D300C59590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		964311E029B090AE0019E184 /* Build configuration list for PBXNativeTarget "ToudouProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				964311DE29B090AD0019E184 /* Debug */,
+				964311DF29B090AD0019E184 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
