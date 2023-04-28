@@ -11,7 +11,7 @@ extension Date {
     
     var simpleDate: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, yyyy"
+        formatter.dateFormat = "d MMM yyyy"
         return formatter.string(from: self)
     }
     
