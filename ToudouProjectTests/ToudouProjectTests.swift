@@ -212,7 +212,7 @@ final class ToudouProjectTests: XCTestCase {
         task.isDone = true
         viewModel.createTask(taskModel: task)
         // Then
-        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks(.all))
+        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks())
     }
     
     // Test the filter applied on today tasks
@@ -222,7 +222,7 @@ final class ToudouProjectTests: XCTestCase {
         task.hasDueDate = true
         viewModel.createTask(taskModel: task)
         // Then
-        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks(.today))
+        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks())
     }
     
     // Test the filter applied on planned tasks
@@ -233,7 +233,7 @@ final class ToudouProjectTests: XCTestCase {
         task.dueDate = Date.now.addingDate(component: .day, value: 5)
         viewModel.createTask(taskModel: task)
         // Then
-        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks(.planned))
+        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks())
     }
     
     // Test the filter applied on planned tasks
@@ -243,7 +243,7 @@ final class ToudouProjectTests: XCTestCase {
         task.isDone = true
         viewModel.createTask(taskModel: task)
         // Then
-        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks(.done))
+        XCTAssertEqual(viewModel.tasks, viewModel.filteredTasks())
     }
     
     // Test date ascending sorting
