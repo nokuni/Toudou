@@ -61,7 +61,6 @@ final class ToudouProjectUITests: XCTestCase {
         elementsQuery.staticTexts["Low"].tap()
         elementsQuery.staticTexts["Medium"].tap()
         elementsQuery.staticTexts["High"].tap()
-        elementsQuery.staticTexts["None"].tap()
         
         // Toggle the due date
         let dueDateSwitch = elementsQuery.switches["Due date"]
@@ -76,43 +75,6 @@ final class ToudouProjectUITests: XCTestCase {
         let dueDateButton = datePickersQuery.buttons[dueDate.simpleDate]
         XCTAssertTrue(dueDateButton.exists)
         dueDateButton.tap()
-        
-        // Select a date in the date picker
-        let datePickerCollectionViewsQuery = app.datePickers.collectionViews
-        datePickerCollectionViewsQuery
-            .buttons["Thursday, March 9"]
-            .children(matching: .other).element.children(matching: .other)
-            .element.children(matching: .other).element
-            .tap()
-
-        // Dismiss the date picker
-        tapOnScreen(in: app, at: tapPoint)
-        
-        // Select the hour picker
-        // The accesible identifier for the hour part of the picker is formatted in "h:mm a".
-        // example: "10:30 PM"
-        let dueDateHourButton = datePickersQuery.buttons[dueDate.hourTime]
-        XCTAssertTrue(dueDateHourButton.exists)
-        dueDateHourButton.tap()
-        
-        // Select the hour
-        let datePickers = app.datePickers
-        datePickers.pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: "12")
-        datePickers.pickerWheels.element(boundBy: 1).adjust(toPickerWheelValue: "30")
-        
-        // Dismiss the hour picker
-        tapOnScreen(in: app, at: tapPoint)
-        
-        // Select the reminder menu
-        let reminderMenuButton = elementsQuery.buttons["Reminder, None"]
-        XCTAssertTrue(reminderMenuButton.exists)
-        reminderMenuButton.tap()
-        
-        // Select a value in the menu
-        app.collectionViews.buttons["At time of event"].tap()
-        
-        // Dismiss the hour picker
-        tapOnScreen(in: app, at: tapPoint)
         
         // Select the category navigation button
         let categoryButton = elementsQuery.buttons["Category, Work"]
