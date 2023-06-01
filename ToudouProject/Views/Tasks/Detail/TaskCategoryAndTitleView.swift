@@ -19,9 +19,3 @@ struct TaskCategoryAndTitleView: View {
             .font(.title)
     }
 }
-
-struct TaskCategoryAndTitleView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskCategoryAndTitleView(task: TaskEntity(context: CoreDataManager.shared.container.viewContext))
-    }
-}

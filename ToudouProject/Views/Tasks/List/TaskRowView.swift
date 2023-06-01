@@ -51,9 +51,3 @@ struct TaskRowView: View {
         .padding(.vertical)
     }
 }
-
-struct TaskRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskRowView(task: TaskEntity(context: CoreDataManager.shared.container.viewContext))
-    }
-}

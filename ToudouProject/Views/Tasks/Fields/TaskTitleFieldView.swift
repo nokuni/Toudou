@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Utility_Toolbox
 
 struct TaskTitleFieldView: View {
     @Binding var title: String
     var focusField: FocusState<FocusField?>.Binding
     var body: some View {
         TextField("Title", text: $title)
-            .defaultTextFieldStyle(text: $title, focusField: focusField, focusAction: nil, cancelAction: nil)
+            .completeTextFieldStyle(text: $title, focusField: focusField)
             .focused(focusField, equals: .one)
             .limitText(text: $title, limit: 30)
             .submitLabel(.continue)

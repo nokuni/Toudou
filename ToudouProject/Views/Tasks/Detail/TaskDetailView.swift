@@ -58,9 +58,3 @@ struct TaskDetailView: View {
         .padding(.horizontal)
     }
 }
-
-struct TaskDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskDetailView(task: TaskEntity(context: CoreDataManager.shared.container.viewContext))
-    }
-}

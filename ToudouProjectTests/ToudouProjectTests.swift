@@ -6,20 +6,21 @@
 //
 
 import XCTest
+import Utility_Toolbox
 @testable import ToudouProject
 
 final class ToudouProjectTests: XCTestCase {
     
-    let viewModel = ToudouViewModel()
+    var viewModel: ToudouViewModel!
     var task = TaskModel()
     
-    override func setUpWithError() throws {
-        let viewModel = ToudouViewModel()
-        CoreDataManager.shared.delete(objects: viewModel.tasks)
+    override func setUp() {
+        viewModel = ToudouViewModel()
+        viewModel.saveManager.deleteAll(objects: viewModel.tasks)
     }
     
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
     }
     
     // Test maximum number of characters in title
@@ -94,7 +95,8 @@ final class ToudouProjectTests: XCTestCase {
         // Given
         let reminder: TaskAlertReminder = .oneWeekBefore
         // When
-        task.dueDate = Date.now.addingDate(component: .month, value: 1)
+        let addedDate = Date.now.addingDate(component: .month, value: 1)
+        task.dueDate = addedDate
         // Then
         let expectedResult = task.isReminderPossible(on: reminder)
         XCTAssertFalse(expectedResult)
@@ -167,7 +169,7 @@ final class ToudouProjectTests: XCTestCase {
         viewModel.createTask(taskModel: taskModel)
         taskModel.title = newTitle
         viewModel.tasks[0].title = taskModel.title
-        CoreDataManager.shared.saveData()
+        viewModel.save()
         viewModel.readTasks()
         // Then
         XCTAssertNotEqual(viewModel.tasks[0].title, oldTitle)
@@ -179,7 +181,7 @@ final class ToudouProjectTests: XCTestCase {
         let taskModel = TaskModel()
         // When
         viewModel.createTask(taskModel: taskModel)
-        CoreDataManager.shared.delete(object: viewModel.tasks[0])
+        viewModel.saveManager.delete(viewModel.tasks[0])
         viewModel.readTasks()
         // Then
         XCTAssertEqual(viewModel.tasks.count, 0)
@@ -271,9 +273,9 @@ final class ToudouProjectTests: XCTestCase {
                      calendar.date(from: thirdComponent)]
         // When
         for date in dates {
-            let taskEntity = TaskEntity(context: CoreDataManager.shared.container.viewContext)
+            let taskEntity = TaskEntity(context: viewModel.saveManager.container.viewContext)
             taskEntity.creationDate = date
-            CoreDataManager.shared.saveData()
+            viewModel.save()
         }
         viewModel.sortOrder = .ascending
         viewModel.selectedSort = .creationDate
@@ -311,9 +313,9 @@ final class ToudouProjectTests: XCTestCase {
                      calendar.date(from: thirdComponent)]
         // When
         for date in dates {
-            let taskEntity = TaskEntity(context: CoreDataManager.shared.container.viewContext)
+            let taskEntity = TaskEntity(context: viewModel.saveManager.container.viewContext)
             taskEntity.creationDate = date
-            CoreDataManager.shared.saveData()
+            viewModel.save()
         }
         viewModel.sortOrder = .descending
         viewModel.selectedSort = .creationDate

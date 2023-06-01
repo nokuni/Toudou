@@ -30,9 +30,3 @@ struct TaskCountdownView: View {
         }
     }
 }
-
-struct TaskCountdownView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskCountdownView(size: .zero, task: TaskEntity(context: CoreDataManager.shared.container.viewContext), dateTimer: DateTimer())
-    }
-}

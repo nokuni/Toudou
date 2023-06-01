@@ -66,6 +66,7 @@ class NotificationManager: ObservableObject {
         
         if isReminderLaunched { UNUserNotificationCenter.current().add(request) }
     }
+    
     func removeNotifications(from identifier: String) {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
     }

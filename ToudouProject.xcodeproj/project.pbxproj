@@ -15,11 +15,9 @@
 		96420191296496D300C59590 /* ToudouProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9642018F296496D300C59590 /* ToudouProject.xcdatamodeld */; };
 		964201982964972100C59590 /* ToudouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201972964972100C59590 /* ToudouViewModel.swift */; };
 		9642019A29649CE400C59590 /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642019929649CE400C59590 /* TaskRowView.swift */; };
-		9642019C29649E7500C59590 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642019B29649E7500C59590 /* CoreDataManager.swift */; };
 		9642019F2964AD5200C59590 /* TaskPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642019E2964AD5200C59590 /* TaskPriority.swift */; };
 		964201A12964BF2100C59590 /* TaskCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201A02964BF2100C59590 /* TaskCategory.swift */; };
 		964201A52964C7AC00C59590 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201A42964C7AC00C59590 /* TextFieldModifier.swift */; };
-		964201A72964C7C900C59590 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201A62964C7C900C59590 /* ViewExtension.swift */; };
 		964201A92964C9D100C59590 /* TaskSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201A82964C9D100C59590 /* TaskSheetView.swift */; };
 		964201AF2964D60E00C59590 /* TaskPriorityFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201AE2964D60E00C59590 /* TaskPriorityFieldView.swift */; };
 		964201B12964D65200C59590 /* TaskCategoryFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964201B02964D65200C59590 /* TaskCategoryFieldView.swift */; };
@@ -61,6 +59,7 @@
 		96BFB51C29685581000BCE7E /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BFB51B29685581000BCE7E /* TaskDetailView.swift */; };
 		96D14F4C29AEA68E00B01D65 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D14F4B29AEA68E00B01D65 /* TaskModel.swift */; };
 		96D14F4E29AEB2EC00B01D65 /* TextLimiterModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D14F4D29AEB2EC00B01D65 /* TextLimiterModifer.swift */; };
+		96D7081E2A278AC400B97F1C /* Utility Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = 96D7081D2A278AC400B97F1C /* Utility Toolbox */; };
 		96E03D4329AE312F007EE940 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E03D4229AE312F007EE940 /* TaskListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,11 +90,9 @@
 		96420190296496D300C59590 /* ToudouProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToudouProject.xcdatamodel; sourceTree = "<group>"; };
 		964201972964972100C59590 /* ToudouViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToudouViewModel.swift; sourceTree = "<group>"; };
 		9642019929649CE400C59590 /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
-		9642019B29649E7500C59590 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9642019E2964AD5200C59590 /* TaskPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPriority.swift; sourceTree = "<group>"; };
 		964201A02964BF2100C59590 /* TaskCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategory.swift; sourceTree = "<group>"; };
 		964201A42964C7AC00C59590 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
-		964201A62964C7C900C59590 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		964201A82964C9D100C59590 /* TaskSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSheetView.swift; sourceTree = "<group>"; };
 		964201AE2964D60E00C59590 /* TaskPriorityFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPriorityFieldView.swift; sourceTree = "<group>"; };
 		964201B02964D65200C59590 /* TaskCategoryFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategoryFieldView.swift; sourceTree = "<group>"; };
@@ -139,6 +136,7 @@
 		96BFB51B29685581000BCE7E /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		96D14F4B29AEA68E00B01D65 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		96D14F4D29AEB2EC00B01D65 /* TextLimiterModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLimiterModifer.swift; sourceTree = "<group>"; };
+		96D7081B2A278A2B00B97F1C /* ToudouProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToudouProject.entitlements; sourceTree = "<group>"; };
 		96E03D4229AE312F007EE940 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D7081E2A278AC400B97F1C /* Utility Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +191,7 @@
 		96420183296496D100C59590 /* ToudouProject */ = {
 			isa = PBXGroup;
 			children = (
+				96D7081B2A278A2B00B97F1C /* ToudouProject.entitlements */,
 				964201D82965DAF400C59590 /* Resources */,
 				964201D92965DB1400C59590 /* Supporting Files */,
 				964201DA2965DBCC00C59590 /* App */,
@@ -227,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				96BFB515296825B4000BCE7E /* NotificationManager.swift */,
-				9642019B29649E7500C59590 /* CoreDataManager.swift */,
 				9642018D296496D300C59590 /* Persistence.swift */,
 				966CC96D29AFB2AD00A70983 /* DateTimer.swift */,
 			);
@@ -237,7 +236,6 @@
 		964201A32964C77700C59590 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				964201A62964C7C900C59590 /* ViewExtension.swift */,
 				964201C22965845200C59590 /* ColorExtension.swift */,
 				964201CE2965B56900C59590 /* DateExtension.swift */,
 				964311E829B226780019E184 /* BoolExtension.swift */,
@@ -431,6 +429,9 @@
 			dependencies = (
 			);
 			name = ToudouProject;
+			packageProductDependencies = (
+				96D7081D2A278AC400B97F1C /* Utility Toolbox */,
+			);
 			productName = ToudouProject;
 			productReference = 96420181296496D100C59590 /* ToudouProject.app */;
 			productType = "com.apple.product-type.application";
@@ -503,6 +504,9 @@
 				Base,
 			);
 			mainGroup = 96420178296496D100C59590;
+			packageReferences = (
+				96D7081C2A278AC400B97F1C /* XCRemoteSwiftPackageReference "Utility-Toolbox" */,
+			);
 			productRefGroup = 96420182296496D100C59590 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -570,12 +574,10 @@
 				96D14F4E29AEB2EC00B01D65 /* TextLimiterModifer.swift in Sources */,
 				964311E529B2233E0019E184 /* EmptyTaskView.swift in Sources */,
 				964201E02965DC8E00C59590 /* TaskFiltering.swift in Sources */,
-				9642019C29649E7500C59590 /* CoreDataManager.swift in Sources */,
 				96BFB516296825B4000BCE7E /* NotificationManager.swift in Sources */,
 				96D14F4C29AEA68E00B01D65 /* TaskModel.swift in Sources */,
 				96BFB51829682DC1000BCE7E /* TaskAlertReminder.swift in Sources */,
 				964311E929B226780019E184 /* BoolExtension.swift in Sources */,
-				964201A72964C7C900C59590 /* ViewExtension.swift in Sources */,
 				964311EE29B22E0A0019E184 /* SortOrderButtonView.swift in Sources */,
 				966CC96A29AF87E900A70983 /* EditAndValidateTaskButtonView.swift in Sources */,
 				964201BF2965830200C59590 /* AddTaskTopContentView.swift in Sources */,
@@ -750,6 +752,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ToudouProject/ToudouProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToudouProject/Preview Content\"";
@@ -759,6 +762,7 @@
 				INFOPLIST_FILE = "ToudouProject/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Toudou;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -781,6 +785,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ToudouProject/ToudouProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToudouProject/Preview Content\"";
@@ -790,6 +795,7 @@
 				INFOPLIST_FILE = "ToudouProject/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Toudou;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -917,6 +923,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		96D7081C2A278AC400B97F1C /* XCRemoteSwiftPackageReference "Utility-Toolbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nokuni/Utility-Toolbox";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		96D7081D2A278AC400B97F1C /* Utility Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96D7081C2A278AC400B97F1C /* XCRemoteSwiftPackageReference "Utility-Toolbox" */;
+			productName = "Utility Toolbox";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9642018F296496D300C59590 /* ToudouProject.xcdatamodeld */ = {

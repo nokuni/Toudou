@@ -7,12 +7,18 @@
 
 import SwiftUI
 import CoreData
+import CloudKit
+import Utility_Toolbox
 
 final class ToudouViewModel: ObservableObject {
     
     init() {
         readTasks()
+        AsyncManager.loadContent(content: cloudManager.requestPermissions)
     }
+    
+    let saveManager = SaveManager(container: PersistenceController.shared.container)
+    let cloudManager = CloudKitManager()
     
     @Published var tasks = [TaskEntity]()
     @Published var filtering: TaskFiltering = .all
@@ -23,23 +29,34 @@ final class ToudouViewModel: ObservableObject {
     @Published var isTaskEditing: Bool = false
     @Published var isEditing: Bool = false
     
+    func save() { try? saveManager.save() }
+    
+    func getCloudInformations() {
+        print("Account status: \(cloudManager.configuration.accountStatus)")
+        print("Permission status: \(cloudManager.configuration.permissionStatus)")
+        print("Username: \(cloudManager.configuration.username)")
+    }
+    
     // MARK: - TASKS
     func createTask(taskModel: TaskModel) {
+        
+        let dueDate: Date? = taskModel.hasDueDate ? taskModel.dueDate : nil
+        
         withAnimation {
             
-            let newTask = TaskEntity(context: CoreDataManager.shared.container.viewContext)
+            let newTask = TaskEntity(context: saveManager.container.viewContext)
             
             newTask.id = UUID()
             newTask.title = taskModel.title
             newTask.notes = taskModel.notes
             newTask.creationDate = Date.now
-            newTask.dueDate = taskModel.hasDueDate ? taskModel.dueDate : nil
+            newTask.dueDate = dueDate
             newTask.priority = taskModel.priority
             newTask.reminder = taskModel.reminder
             newTask.category = taskModel.category
             newTask.isDone = taskModel.isDone
             
-            CoreDataManager.shared.saveData()
+            save()
             readTasks()
             
             if taskModel.hasDueDate {
@@ -76,7 +93,7 @@ final class ToudouViewModel: ObservableObject {
             tasks[index].category = taskModel.category
             tasks[index].notes = taskModel.notes
             
-            CoreDataManager.shared.saveData()
+            save()
             readTasks()
             
             guard let id = tasks[index].id else { return }
@@ -95,8 +112,8 @@ final class ToudouViewModel: ObservableObject {
     func deleteTask(_ task: TaskEntity) {
         guard let id = task.id else { return }
         NotificationManager.shared.removeNotifications(from: id.uuidString)
-        CoreDataManager.shared.delete(object: task)
-        CoreDataManager.shared.saveData()
+        saveManager.delete(task)
+        save()
         readTasks()
     }
     
@@ -137,8 +154,12 @@ final class ToudouViewModel: ObservableObject {
     
     private func fetch<Value>(keyPath: KeyPath<TaskEntity, Value>, order: Bool) {
         let sorting = currentSort(keyPath: keyPath, order: order)
-        tasks = CoreDataManager.shared.fetch("TaskEntity", sorting: sorting)
-        CoreDataManager.shared.saveData()
+        do {
+            tasks = try saveManager.fetchedObjects(entityName: "TaskEntity", sorting: sorting)
+            save()
+        } catch {
+            print(error)
+        }
     }
     
     func switchSortOrder() {
@@ -149,7 +170,7 @@ final class ToudouViewModel: ObservableObject {
     func toggleTaskValidation(task: TaskEntity) {
         withAnimation {
             if let index = tasks.firstIndex(of: task) { tasks[index].isDone.toggle() }
-            CoreDataManager.shared.saveData()
+            save()
             readTasks()
         }
     }

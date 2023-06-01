@@ -21,9 +21,3 @@ struct TaskDatesView: View {
         }
     }
 }
-
-struct TaskDatesView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskDatesView(task: TaskEntity(context: CoreDataManager.shared.container.viewContext))
-    }
-}

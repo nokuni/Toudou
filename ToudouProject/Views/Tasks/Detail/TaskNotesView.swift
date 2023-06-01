@@ -17,9 +17,3 @@ struct TaskNotesView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-
-struct TaskNotesView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskNotesView(task: TaskEntity(context: CoreDataManager.shared.container.viewContext))
-    }
-}

@@ -20,9 +20,3 @@ struct ShareButtonView: View {
         }
     }
 }
-
-struct ShareButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShareButtonView(task: TaskEntity(context: CoreDataManager.shared.container.viewContext))
-    }
-}

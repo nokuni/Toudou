@@ -38,9 +38,3 @@ struct EditAndValidateTaskButtonView: View {
         }
     }
 }
-
-struct EditAndValidateTaskButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditAndValidateTaskButtonView(task: TaskEntity(context: CoreDataManager.shared.container.viewContext))
-    }
-}

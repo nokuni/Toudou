@@ -28,9 +28,3 @@ struct InvalidateTaskButtonView: View {
         }
     }
 }
-
-struct InvalidateTaskButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        InvalidateTaskButtonView(task: TaskEntity(context: CoreDataManager.shared.container.viewContext))
-    }
-}
