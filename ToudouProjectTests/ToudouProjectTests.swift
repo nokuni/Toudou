@@ -6,7 +6,6 @@
 //
 
 import XCTest
-import Utility_Toolbox
 @testable import ToudouProject
 
 final class ToudouProjectTests: XCTestCase {
@@ -95,8 +94,7 @@ final class ToudouProjectTests: XCTestCase {
         // Given
         let reminder: TaskAlertReminder = .oneWeekBefore
         // When
-        let addedDate = Date.now.addingDate(component: .month, value: 1)
-        task.dueDate = addedDate
+        task.dueDate = Date.now.addingDate(component: .month, value: 1)
         // Then
         let expectedResult = task.isReminderPossible(on: reminder)
         XCTAssertFalse(expectedResult)

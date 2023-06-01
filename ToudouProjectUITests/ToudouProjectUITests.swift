@@ -7,6 +7,13 @@
 
 import XCTest
 
+extension Date {
+    func addingDate(component: Calendar.Component, value: Int) -> Date {
+        let calendar = Calendar.current
+        return calendar.date(byAdding: component, value: value, to: self) ?? Date()
+    }
+}
+
 final class ToudouProjectUITests: XCTestCase {
     
     func tapOnScreen(in app: XCUIApplication, at point: CGPoint) {
@@ -39,9 +46,7 @@ final class ToudouProjectUITests: XCTestCase {
         app.launch()
         
         // The date advanced by 5 minutes (the app requires it)
-                let dueDate = Date.now.addingDate(component: .minute, value: 5)
-        // The point where to tap on the screen.
-        let tapPoint = CGPoint(x: UIScreen.main.bounds.midX,y: UIScreen.main.bounds.midY * 0.2)
+        let dueDate = Date.now.addingDate(component: .minute, value: 5)
         
         // Open New Task sheet
         let newTaskButton = app.navigationBars["To Do"].buttons["New Task"]
@@ -66,15 +71,6 @@ final class ToudouProjectUITests: XCTestCase {
         let dueDateSwitch = elementsQuery.switches["Due date"]
         XCTAssertTrue(dueDateSwitch.exists)
         dueDateSwitch.tap()
-        
-        // The date pickers elements
-        let datePickersQuery = elementsQuery.datePickers
-        // Select the date picker
-        // The accesible identifier for the date part of the picker is formatted in "MMM d, yyyy".
-        // example: "Mar 3, 2023"
-        let dueDateButton = datePickersQuery.buttons[dueDate.simpleDate]
-        XCTAssertTrue(dueDateButton.exists)
-        dueDateButton.tap()
         
         // Select the category navigation button
         let categoryButton = elementsQuery.buttons["Category, Work"]

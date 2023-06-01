@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import ToudouProject
 
 final class ToudouProjectUITestsLaunchTests: XCTestCase {
 
